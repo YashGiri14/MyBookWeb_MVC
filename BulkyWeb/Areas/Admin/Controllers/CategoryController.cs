@@ -3,10 +3,13 @@ using MyBook.DataAccess.Data;
 using MyBook.DataAccess.Repository.IRepository;
 using MyBook.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+using MyBook.Utility;
 
 namespace MyBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
